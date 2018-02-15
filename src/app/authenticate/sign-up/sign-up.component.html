@@ -1,0 +1,36 @@
+<div class="register-top" >
+  <h6>New user?</h6>
+</div>
+<div class="login-bottom">
+  <form [formGroup]='rForm' (ngSubmit)="register(rForm.value)">
+    <div class="row">
+        <div class="col-md-6">
+          <input type="text" formControlName="firstName" class="form-control space" placeholder="Enter First Name">
+        </div>
+        <div class="col-md-6">
+          <input type="text" formControlName="lastName" class="form-control space" placeholder="Enter Last Name">       
+        </div>
+      </div>
+    <input type="email" formControlName="email" class="form-control space" placeholder="Enter email">
+    <input type="password" formControlName="password" class="form-control space" placeholder="Enter password">
+    <button class="btn btn-success form-control" [disabled]='!rForm.valid'>Register</button>
+    <div class="alert alert-danger space" *ngIf="!rForm.controls['firstName'].valid && rForm.controls['firstName'].touched">
+        <strong>Error!</strong> Invalid First Name.
+    </div>
+    <div class="alert alert-danger space" *ngIf="!rForm.controls['lastName'].valid && rForm.controls['lastName'].touched">
+        <strong>Error!</strong> Invalid Last Name.
+    </div>
+    <div class="alert alert-danger space" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+        <strong>Error!</strong> Invalid email.
+    </div>
+    <div class="alert alert-danger space" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+        <strong>Error!</strong> Invalid password, must have at least 8 characters.
+    </div>
+    <div class="alert alert-danger space" *ngIf="no_auth && !rForm.controls['email'].dirty">
+        <strong>Error!</strong> {{errorMessage}}.
+    </div>
+    
+  </form>
+  
+  
+</div>

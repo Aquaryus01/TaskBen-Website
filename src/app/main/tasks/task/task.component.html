@@ -1,0 +1,30 @@
+<div style="background-color: white; margin-bottom:4px">
+    <div class="dashboard-comments__item">
+             <div  *ngIf="!activateEdit"class="dashboard-comments__body">
+              <h5 class="dashboard-comments__sender">
+                {{task.title}}
+              </h5>
+              <div class="dashboard-comments__content">
+                {{task.description}}
+              </div>
+              <div class="dashboard-comments__controls">
+                <a href= # onclick="return false;" (click)='activateEdit = !activateEdit'>Edit</a>
+                <a href= # onclick="return false;" (click)="removeTask()" style="color:red">Remove</a>
+              </div>
+
+              
+            </div>
+            <div  *ngIf="activateEdit"class="dashboard-comments__body">
+              <form>
+                <label>Title:</label>
+                <input type="text" [(ngModel)]="titleDirty" name="titleDirty" class="form-control" placeholder="Task Title">
+
+                <label>Description:</label>
+                <input type="text" [(ngModel)]="descriptionDirty" name="descriptionDirty" class="form-control" placeholder="Task Title">
+                <hr>  
+                <button class="btn btn-primary" (click)="updateTask()"[disabled]='editChanges()'>Complete Edit</button>
+                <div class="btn btn-warning" (click)="activateEdit = !activateEdit">Cancel</div>
+              </form>
+        </div></div></div>
+    
+      

@@ -1,0 +1,19 @@
+<div class="login-top">
+  <h6>Existing Users</h6>
+</div>
+<div class="login-bottom">
+  <form [formGroup]='rForm' (ngSubmit)="login(rForm.value)">
+    <input type="email" class="form-control space" formControlName="email" placeholder="Enter email">
+    <input type="password" class="form-control space" formControlName="password" placeholder="Enter password">
+    <button class="btn btn-primary form-control" [disabled]='!rForm.valid'>Log In</button>
+  </form>
+  <div class="alert alert-danger space" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+      <strong>Error!</strong> Invalid email.
+  </div>
+  <div class="alert alert-danger space" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+      <strong>Error!</strong> Invalid password.
+  </div>
+  <div class="alert alert-danger space" *ngIf="no_auth && !rForm.controls['email'].dirty">
+    <strong>Error!</strong> Invalid username/password match!.
+</div>
+</div>
