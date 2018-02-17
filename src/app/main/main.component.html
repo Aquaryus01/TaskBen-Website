@@ -1,4 +1,10 @@
-<div class="wrapper">
-    <app-sidebar></app-sidebar>
-    <app-tasks></app-tasks>
+
+     <div *ngIf="!resize" class="wrapper">
+ <app-sidebar></app-sidebar>
+ <app-tasks></app-tasks>
 </div> 
+
+<div *ngIf="resize" class="wrapper-alt">
+     <app-sidebar></app-sidebar>
+     <app-tasks></app-tasks>
+ </div> 

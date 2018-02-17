@@ -1,2 +1,2 @@
 <app-add-task></app-add-task>
-<app-task *ngFor = "let task of tasks" [task]='task'></app-task>
+<app-task [@goals]="tasks.length" *ngFor = "let task of tasks" [task]='task'></app-task>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { UserService } from '../Services/user.service';
 import {ViewEncapsulation} from '@angular/core';
 
@@ -9,12 +9,32 @@ import {ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class MainComponent implements OnInit {
-
-  constructor(private user: UserService) { }
-
-  ngOnInit() {
+  
+  
+  constructor(private user: UserService) { 
+    if(window.innerWidth<=991)
+      this.resize = true;
+    else
+      this.resize = false;
   }
 
+  resize:boolean;
+
+  @HostListener('window:resize', ['$event'])
+  
+  onResize(event) {
+    if(event.target.innerWidth<=991)
+      {this.resize = true;
+      console.log(window);}
+    else
+      this.resize = false;
+  }
+  
+  
+      
+  ngOnInit() {
+  }
+  
   onActivate(){
   }
 

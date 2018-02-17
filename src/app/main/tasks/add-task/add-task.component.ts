@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../../Services/task.service';
 import {Task} from '../sharable/task'
+
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.css']
+  styleUrls: ['./add-task.component.css'],
+
 })
 export class AddTaskComponent implements OnInit {
 
