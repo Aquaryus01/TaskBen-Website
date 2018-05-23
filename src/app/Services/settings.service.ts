@@ -28,8 +28,8 @@ export class SettingsService {
   }
   public getToken()
   {
-    return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzEsImVtYWlsIjoiYWxleGJlbmNoZWE5OUB5YWhvby5jb20iLCJmaXJzdE5hbWUiOiJBbGV4IiwibGFzdE5hbWUiOiJCZW5jaGVhIiwiaWF0IjoxNTE4ODIxMjU0LCJleHAiOjE1MTg4MzkyNTR9.LjU9C05XOKUekNCBlc9zzi8JeOJO-stKoPa3RgsdOBg";
-    //return this.localStorage.getItem('key');
+    //return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzEsImVtYWlsIjoiYWxleGJlbmNoZWE5OUB5YWhvby5jb20iLCJmaXJzdE5hbWUiOiJBbGV4IiwibGFzdE5hbWUiOiJCZW5jaGVhIiwiaWF0IjoxNTE4ODIxMjU0LCJleHAiOjE1MTg4MzkyNTR9.LjU9C05XOKUekNCBlc9zzi8JeOJO-stKoPa3RgsdOBg";
+    return this.localStorage.getItem('key');
   }
 
   public setToken(str: string)

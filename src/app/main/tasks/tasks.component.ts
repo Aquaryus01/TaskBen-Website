@@ -37,9 +37,10 @@ export class TasksComponent implements OnInit {
   tasks: Task[] = [];
 
   constructor(private taskService: TaskService) 
-  { 
+  {
+      console.log('req'); 
       this.taskService.curentMessage.subscribe((task)=>{
-      
+      	
         this.taskService.createTask(task).subscribe((res)=>{
           console.log(res);
           task['id'] = parseInt(res);
